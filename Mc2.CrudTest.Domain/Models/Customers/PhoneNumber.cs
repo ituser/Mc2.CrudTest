@@ -1,5 +1,6 @@
 ﻿using Mc2.CrudTest.Domain.Models.Customers.Exceptions;
 using Mc2.CrudTest.Framework;
+using PhoneNumbers;
 
 namespace Mc2.CrudTest.Domain.Models.Customers
 {
@@ -27,9 +28,19 @@ namespace Mc2.CrudTest.Domain.Models.Customers
             }
         }
 
-        private static bool IsPhoneNumberFormatValid(string phoneNumber)
+        private static bool IsPhoneNumberFormatValid(string phoneNumberStr)
         {
-            return true;
+            var phoneUtil = PhoneNumberUtil.GetInstance();
+
+            try
+            {
+                var phoneNumber = phoneUtil.Parse(phoneNumberStr, null);
+                return phoneUtil.IsValidNumber(phoneNumber);
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

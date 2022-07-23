@@ -1,4 +1,6 @@
-﻿using Mc2.CrudTest.Domain.Models.Customers.Exceptions;
+﻿using System;
+using System.Text.RegularExpressions;
+using Mc2.CrudTest.Domain.Models.Customers.Exceptions;
 using Mc2.CrudTest.Framework;
 
 namespace Mc2.CrudTest.Domain.Models.Customers
@@ -29,7 +31,7 @@ namespace Mc2.CrudTest.Domain.Models.Customers
 
         private static bool IsEmailFormatValid(string email)
         {
-            return true;
+            return Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$", RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
         }
     }
 }

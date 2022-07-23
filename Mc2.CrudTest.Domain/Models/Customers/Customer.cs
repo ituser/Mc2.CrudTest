@@ -114,7 +114,7 @@ namespace Mc2.CrudTest.Domain.Models.Customers
             var isEmailExist = duplicateCustomerEmailDomainService.IsEmailExist(email);
             if (isEmailExist)
             {
-                throw new DuplicateCustomerException();
+                throw new DuplicateEmailException();
             }
         }
 

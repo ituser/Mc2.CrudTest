@@ -1,4 +1,6 @@
-﻿using Mc2.CrudTest.Domain.Models.Customers.Exceptions;
+﻿using IbanNet;
+using IbanNet.Registry;
+using Mc2.CrudTest.Domain.Models.Customers.Exceptions;
 using Mc2.CrudTest.Framework;
 
 namespace Mc2.CrudTest.Domain.Models.Customers
@@ -27,9 +29,11 @@ namespace Mc2.CrudTest.Domain.Models.Customers
             }
         }
 
-        public static bool IsValidBankAccountNumber(string bankAccountNumber)
+        private static bool IsValidBankAccountNumber(string bankAccountNumber)
         {
-            return true;
+            var parser = new IbanParser(IbanRegistry.Default);
+
+            return parser.TryParse(bankAccountNumber, out Iban _);
         }
     }
 }

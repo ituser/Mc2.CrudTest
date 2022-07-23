@@ -13,8 +13,8 @@ namespace Mc2.CrudTest.UnitTests.Customers
             LastName = "Allahyari";
             DateOfBirth = DateTime.Parse("1984-04-11");
             Email = "allahyari3631@gmail.com";
-            PhoneNumber = "09123491682";
-            BankAccountNumber = "1234567890";
+            PhoneNumber = "+989123491682";
+            BankAccountNumber = "NL91 ABNA 0417 1643 00";
 
             DuplicateCustomerDomainService = Substitute.For<IDuplicateCustomerDomainService>();
             DuplicateCustomerEmailDomainService = Substitute.For<IDuplicateCustomerEmailDomainService>();

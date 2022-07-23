@@ -40,6 +40,10 @@ namespace Mc2.CrudTest.Domain.Models.Customers
                                                   CreateDateTime));
         }
 
+        private Customer()
+        {
+        }
+
         public FirstName FirstName { get; set; }
 
         public LastName LastName { get; set; }
@@ -81,14 +85,14 @@ namespace Mc2.CrudTest.Domain.Models.Customers
                                                    Email.Value,
                                                    PhoneNumber.Value,
                                                    BankAccountNumber.Value,
-                                                   ModifiedDateTime));
+                                                   ModifiedDateTime.Value));
         }
 
         public void Remove()
         {
             MarkAsRemove();
 
-            PublishEvent(new CustomerRemovedEvent(Id, DeletedDateTime));
+            PublishEvent(new CustomerRemovedEvent(Id, DeletedDateTime.Value));
         }
 
         private static void CheckCustomerIsNotExist(string firstName, string lastName, DateTime dateOfBirth, IDuplicateCustomerDomainService customerDomainService)

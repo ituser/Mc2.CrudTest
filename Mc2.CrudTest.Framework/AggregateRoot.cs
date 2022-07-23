@@ -20,9 +20,9 @@ namespace Mc2.CrudTest.Framework
 
         public DateTime CreateDateTime { get; protected set; }
 
-        public DateTime ModifiedDateTime { get; protected set; }
+        public DateTime? ModifiedDateTime { get; protected set; }
 
-        public DateTime DeletedDateTime { get; protected set; }
+        public DateTime? DeletedDateTime { get; protected set; }
 
         protected void MarkAsRemove()
         {

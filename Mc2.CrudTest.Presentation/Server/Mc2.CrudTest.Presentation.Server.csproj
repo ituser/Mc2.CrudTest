@@ -9,8 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Shared\Mc2.CrudTest.Shared.csproj" />
-    <ProjectReference Include="..\Front\Mc2.CrudTest.Presentation.Front.csproj" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 

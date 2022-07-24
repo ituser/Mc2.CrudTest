@@ -128,11 +128,13 @@ namespace Mc2.CrudTest.Persistence.EFCore.Migrations
                             b1.Property<Guid>("CustomerId")
                                 .HasColumnType("uniqueidentifier");
 
-                            b1.Property<string>("Value")
-                                .IsRequired()
-                                .HasMaxLength(15)
-                                .HasColumnType("nvarchar(15)")
-                                .HasColumnName("PhoneNumber");
+                            b1.Property<int>("CountryCode")
+                                .HasColumnType("int")
+                                .HasColumnName("CountryCode");
+
+                            b1.Property<decimal>("NationalNumber")
+                                .HasColumnType("decimal(20,0)")
+                                .HasColumnName("NationalNumber");
 
                             b1.HasKey("CustomerId");
 

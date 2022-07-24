@@ -32,7 +32,7 @@ namespace Mc2.CrudTest.Application.Customers
             existingCustomer.Modify(new FirstName(command.FirstName),
                                     new LastName(command.LastName),
                                     command.DateOfBirth,
-                                    new PhoneNumber(command.PhoneNumber),
+                                    new PhoneNumber(command.PhoneNumber, command.CountryCode),
                                     new Email(command.Email),
                                     new BankAccountNumber(command.BankAccountNumber),
                                     duplicateCustomerDomainService,

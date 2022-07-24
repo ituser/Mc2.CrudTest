@@ -122,7 +122,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Roya",
                             "Allahyari",
                             "1984-04-11",
-                            "+989123491682",
+                            "00989123491682",
                             "allahyari3631@gmail.com",
                             "FR76 3000 6000 0112 3456 7890 189"});
 #line 8
@@ -133,6 +133,562 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 12
  testRunner.Then("I should not get any exception", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Customer with existing name, family and date of birth should be rejected")]
+        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("Description", "Customer with existing name, family and date of birth should be rejected")]
+        public virtual void CustomerWithExistingNameFamilyAndDateOfBirthShouldBeRejected()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer with existing name, family and date of birth should be rejected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 14
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 15
+ testRunner.Given("There is a customer by values FirstName \'Roya\', LastName \'Allahyari\', DateOfBirth" +
+                        " \'1984-04-11\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "DateOfBirth",
+                            "PhoneNumber",
+                            "Email",
+                            "BankAccountNumber"});
+                table2.AddRow(new string[] {
+                            "Roya",
+                            "Allahyari",
+                            "1984-04-11",
+                            "00989123491682",
+                            "allahyari3631@gmail.com",
+                            "FR76 3000 6000 0112 3456 7890 189"});
+#line 16
+ testRunner.And("I enter following values for new customer", ((string)(null)), table2, "And ");
+#line hidden
+#line 19
+ testRunner.When("I press Submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 20
+ testRunner.Then("I should get \'DuplicateCustomerException\' exception", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Customer with null firstName should be rejected")]
+        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("Description", "Customer with null firstName should be rejected")]
+        public virtual void CustomerWithNullFirstNameShouldBeRejected()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer with null firstName should be rejected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 22
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "DateOfBirth",
+                            "PhoneNumber",
+                            "Email",
+                            "BankAccountNumber"});
+                table3.AddRow(new string[] {
+                            "",
+                            "Allahyari",
+                            "1984-04-11",
+                            "00989123491682",
+                            "allahyari3631@gmail.com",
+                            "FR76 3000 6000 0112 3456 7890 189"});
+#line 23
+ testRunner.Given("I enter following values for new customer", ((string)(null)), table3, "Given ");
+#line hidden
+#line 26
+ testRunner.When("I press Submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 27
+ testRunner.Then("I should get \'FirstNameRequiredException\' exception", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Customer with null lastName should be rejected")]
+        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("Description", "Customer with null lastName should be rejected")]
+        public virtual void CustomerWithNullLastNameShouldBeRejected()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer with null lastName should be rejected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 29
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "DateOfBirth",
+                            "PhoneNumber",
+                            "Email",
+                            "BankAccountNumber"});
+                table4.AddRow(new string[] {
+                            "Roya",
+                            "",
+                            "1984-04-11",
+                            "00989123491682",
+                            "allahyari3631@gmail.com",
+                            "FR76 3000 6000 0112 3456 7890 189"});
+#line 30
+ testRunner.Given("I enter following values for new customer", ((string)(null)), table4, "Given ");
+#line hidden
+#line 33
+ testRunner.When("I press Submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 34
+ testRunner.Then("I should get \'LastNameRequiredException\' exception", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Customer with invalid phoneNumber should be rejected")]
+        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("Description", "Customer with invalid phoneNumber should be rejected")]
+        public virtual void CustomerWithInvalidPhoneNumberShouldBeRejected()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer with invalid phoneNumber should be rejected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 36
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "DateOfBirth",
+                            "PhoneNumber",
+                            "Email",
+                            "BankAccountNumber"});
+                table5.AddRow(new string[] {
+                            "Roya",
+                            "Allahyari",
+                            "1984-04-11",
+                            "00989123491682245111",
+                            "allahyari3631@gmail.com",
+                            "FR76 3000 6000 0112 3456 7890 189"});
+#line 37
+ testRunner.Given("I enter following values for new customer", ((string)(null)), table5, "Given ");
+#line hidden
+#line 40
+ testRunner.When("I press Submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 41
+ testRunner.Then("I should get \'InvalidPhoneNumberException\' exception", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Customer with null phoneNumber should be rejected")]
+        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("Description", "Customer with null phoneNumber should be rejected")]
+        public virtual void CustomerWithNullPhoneNumberShouldBeRejected()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer with null phoneNumber should be rejected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 43
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "DateOfBirth",
+                            "PhoneNumber",
+                            "Email",
+                            "BankAccountNumber"});
+                table6.AddRow(new string[] {
+                            "Roya",
+                            "Allahyari",
+                            "1984-04-11",
+                            "",
+                            "allahyari3631@gmail.com",
+                            "FR76 3000 6000 0112 3456 7890 189"});
+#line 44
+ testRunner.Given("I enter following values for new customer", ((string)(null)), table6, "Given ");
+#line hidden
+#line 47
+ testRunner.When("I press Submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 48
+ testRunner.Then("I should get \'PhoneNumberRequiredException\' exception", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Customer with invalid email address should be rejected")]
+        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("Description", "Customer with invalid email address should be rejected")]
+        public virtual void CustomerWithInvalidEmailAddressShouldBeRejected()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer with invalid email address should be rejected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 50
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "DateOfBirth",
+                            "PhoneNumber",
+                            "Email",
+                            "BankAccountNumber"});
+                table7.AddRow(new string[] {
+                            "Roya",
+                            "Allahyari",
+                            "1984-04-11",
+                            "00989123491682",
+                            "allahyari3631.com",
+                            "FR76 3000 6000 0112 3456 7890 189"});
+#line 51
+ testRunner.Given("I enter following values for new customer", ((string)(null)), table7, "Given ");
+#line hidden
+#line 54
+ testRunner.When("I press Submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 55
+ testRunner.Then("I should get \'InvalidEmailException\' exception", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Customer with null email address should be rejected")]
+        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("Description", "Customer with null email address should be rejected")]
+        public virtual void CustomerWithNullEmailAddressShouldBeRejected()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer with null email address should be rejected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 57
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "DateOfBirth",
+                            "PhoneNumber",
+                            "Email",
+                            "BankAccountNumber"});
+                table8.AddRow(new string[] {
+                            "Roya",
+                            "Allahyari",
+                            "1984-04-11",
+                            "00989123491682",
+                            "",
+                            "FR76 3000 6000 0112 3456 7890 189"});
+#line 58
+ testRunner.Given("I enter following values for new customer", ((string)(null)), table8, "Given ");
+#line hidden
+#line 61
+ testRunner.When("I press Submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 62
+ testRunner.Then("I should get \'EmailRequiredException\' exception", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Customer with invalid bank account number should be rejected")]
+        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("Description", "Customer with invalid bank account number should be rejected")]
+        public virtual void CustomerWithInvalidBankAccountNumberShouldBeRejected()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer with invalid bank account number should be rejected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 64
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "DateOfBirth",
+                            "PhoneNumber",
+                            "Email",
+                            "BankAccountNumber"});
+                table9.AddRow(new string[] {
+                            "Roya",
+                            "Allahyari",
+                            "1984-04-11",
+                            "00989123491682",
+                            "allahyari3631@gmail.com",
+                            "1234567890"});
+#line 65
+ testRunner.Given("I enter following values for new customer", ((string)(null)), table9, "Given ");
+#line hidden
+#line 68
+ testRunner.When("I press Submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 69
+ testRunner.Then("I should get \'InvalidBankAccountNumberException\' exception", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Customer with null bank account number should be rejected")]
+        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("Description", "Customer with null bank account number should be rejected")]
+        public virtual void CustomerWithNullBankAccountNumberShouldBeRejected()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer with null bank account number should be rejected", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 71
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+                TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                            "FirstName",
+                            "LastName",
+                            "DateOfBirth",
+                            "PhoneNumber",
+                            "Email",
+                            "BankAccountNumber"});
+                table10.AddRow(new string[] {
+                            "Roya",
+                            "Allahyari",
+                            "1984-04-11",
+                            "00989123491682",
+                            "allahyari3631@gmail.com",
+                            ""});
+#line 72
+ testRunner.Given("I enter following values for new customer", ((string)(null)), table10, "Given ");
+#line hidden
+#line 75
+ testRunner.When("I press Submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 76
+ testRunner.Then("I should get \'BankAccountNumberRequiredException\' exception", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableTheoryAttribute(DisplayName="Create Customer")]
+        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("Description", "Create Customer")]
+        [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "00989123491682", "allahyari3631@gmail.com", "FR76 3000 6000 0112 3456 7890 189", "successful", new string[0])]
+        [Xunit.InlineDataAttribute("\"\"", "Allahyari", "1984-04-11", "00989123491682", "allahyari3631@gmail.com", "FR76 3000 6000 0112 3456 7890 189", "FirstNameRequiredException", new string[0])]
+        [Xunit.InlineDataAttribute("Roya", "\"\"", "1984-04-11", "00989123491682", "allahyari3631@gmail.com", "FR76 3000 6000 0112 3456 7890 189", "LastNameRequiredException", new string[0])]
+        [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "00989123491682245111", "allahyari3631@gmail.com", "FR76 3000 6000 0112 3456 7890 189", "InvalidPhoneNumberException", new string[0])]
+        [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "", "allahyari3631@gmail.com", "FR76 3000 6000 0112 3456 7890 189", "PhoneNumberRequiredException", new string[0])]
+        [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "00989123491682", "allahyari3631.com", "FR76 3000 6000 0112 3456 7890 189", "InvalidEmailException", new string[0])]
+        [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "00989123491682", "\"\"", "FR76 3000 6000 0112 3456 7890 189", "EmailRequiredException", new string[0])]
+        [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "00989123491682", "allahyari3631@gmail.com", "1234567890", "InvalidBankAccountNumberException", new string[0])]
+        [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "00989123491682", "allahyari3631@gmail.com", "\"\"", "BankAccountNumberRequiredException", new string[0])]
+        public virtual void CreateCustomer(string firstName, string lastName, string dateOfBirth, string phoneNumber, string email, string bankAccountNumber, string result, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("FirstName", firstName);
+            argumentsOfScenario.Add("LastName", lastName);
+            argumentsOfScenario.Add("DateOfBirth", dateOfBirth);
+            argumentsOfScenario.Add("PhoneNumber", phoneNumber);
+            argumentsOfScenario.Add("Email", email);
+            argumentsOfScenario.Add("BankAccountNumber", bankAccountNumber);
+            argumentsOfScenario.Add("Result", result);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Customer", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 78
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 79
+ testRunner.Given(string.Format("I enter {0} and {1} and {2} and {3} and {4} and {5}", firstName, lastName, dateOfBirth, phoneNumber, email, bankAccountNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 80
+ testRunner.When("I press Submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 81
+ testRunner.Then(string.Format("{0} message should display", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

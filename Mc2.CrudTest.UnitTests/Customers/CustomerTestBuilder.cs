@@ -13,7 +13,8 @@ namespace Mc2.CrudTest.UnitTests.Customers
             LastName = "Allahyari";
             DateOfBirth = DateTime.Parse("1984-04-11");
             Email = "allahyari3631@gmail.com";
-            PhoneNumber = "+989123491682";
+            PhoneNumber = "09123491682";
+            CountryCode = "IR";
             BankAccountNumber = "NL91 ABNA 0417 1643 00";
 
             DuplicateCustomerDomainService = Substitute.For<IDuplicateCustomerDomainService>();
@@ -36,6 +37,8 @@ namespace Mc2.CrudTest.UnitTests.Customers
 
         public string PhoneNumber { get; set; }
 
+        public string CountryCode { get; set; }
+
         public string BankAccountNumber { get; set; }
 
         public Customer Build()
@@ -43,7 +46,7 @@ namespace Mc2.CrudTest.UnitTests.Customers
             return new Customer(new FirstName(FirstName),
                                 new LastName(LastName),
                                 DateOfBirth,
-                                new PhoneNumber(PhoneNumber),
+                                new PhoneNumber(PhoneNumber, CountryCode),
                                 new Email(Email),
                                 new BankAccountNumber(BankAccountNumber),
                                 DuplicateCustomerDomainService,
@@ -60,49 +63,50 @@ namespace Mc2.CrudTest.UnitTests.Customers
         public CustomerTestBuilder EmailIsExist()
         {
             DuplicateCustomerEmailDomainService.IsEmailExist(Email).Returns(true);
-            
+
             return this;
         }
 
         public CustomerTestBuilder WithFirstName(string firstName)
         {
             FirstName = firstName;
-            
+
             return this;
         }
 
         public CustomerTestBuilder WithLastName(string lastName)
         {
             LastName = lastName;
-            
+
             return this;
         }
 
         public CustomerTestBuilder WithDateOfBirth(DateTime dateOfBirth)
         {
             DateOfBirth = dateOfBirth;
-            
+
             return this;
         }
 
-        public CustomerTestBuilder WithPhoneNumber(string phoneNumber)
+        public CustomerTestBuilder WithPhoneNumber(string phoneNumber, string countryCode)
         {
             PhoneNumber = phoneNumber;
-            
+            CountryCode = countryCode;
+
             return this;
         }
 
         public CustomerTestBuilder WithEmail(string email)
         {
             Email = email;
-            
+
             return this;
         }
 
         public CustomerTestBuilder WithBankAccountNumber(string bankAccountNumber)
         {
             BankAccountNumber = bankAccountNumber;
-            
+
             return this;
         }
     }

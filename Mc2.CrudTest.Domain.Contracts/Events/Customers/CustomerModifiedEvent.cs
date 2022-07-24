@@ -9,7 +9,8 @@ namespace Mc2.CrudTest.Domain.Contracts.Events.Customers
         string LastName,
         DateTime DateOfBirth,
         string Email,
-        string PhoneNumber,
+        ulong PhoneNumber,
+        int CountryCode,
         string BankAccountNumber,
         DateTime ModifiedDateTime) : DomainEvent
     {

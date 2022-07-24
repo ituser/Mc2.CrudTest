@@ -35,7 +35,8 @@ namespace Mc2.CrudTest.Domain.Models.Customers
                                                   LastName.Value,
                                                   DateOfBirth,
                                                   Email.Value,
-                                                  PhoneNumber.Value,
+                                                  PhoneNumber.NationalNumber,
+                                                  phoneNumber.CountryCode,
                                                   BankAccountNumber.Value,
                                                   CreateDateTime));
         }
@@ -83,7 +84,8 @@ namespace Mc2.CrudTest.Domain.Models.Customers
                                                    LastName.Value,
                                                    DateOfBirth,
                                                    Email.Value,
-                                                   PhoneNumber.Value,
+                                                   PhoneNumber.NationalNumber,
+                                                   phoneNumber.CountryCode,
                                                    BankAccountNumber.Value,
                                                    ModifiedDateTime.Value));
         }

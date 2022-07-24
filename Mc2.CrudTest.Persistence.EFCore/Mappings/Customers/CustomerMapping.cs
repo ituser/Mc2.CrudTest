@@ -35,9 +35,10 @@ namespace Mc2.CrudTest.Persistence.EFCore.Mappings.Customers
             builder.OwnsOne(x => x.PhoneNumber,
                             map =>
                             {
-                                map.Property(p => p.Value).HasColumnName(nameof(Customer.PhoneNumber))
-                                   .IsRequired()
-                                   .HasMaxLength(15);
+                                map.Property(p => p.NationalNumber).HasColumnName(nameof(PhoneNumber.NationalNumber))
+                                   .IsRequired();
+                                map.Property(p => p.CountryCode).HasColumnName(nameof(PhoneNumber.CountryCode))
+                                   .IsRequired();
                             });
             builder.OwnsOne(x => x.BankAccountNumber,
                             map =>

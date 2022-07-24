@@ -6,40 +6,35 @@ namespace Mc2.CrudTest.Domain.Models.Customers
 {
     public class PhoneNumber : ValueObject
     {
-        public PhoneNumber(string value)
+        public PhoneNumber(string phoneNumber, string countryCode)
         {
-            ValidatePhoneNumber(value);
-
-            Value = value;
+            SetPhoneNumber(phoneNumber, countryCode);
         }
 
-        public string Value { get; set; }
-
-        private static void ValidatePhoneNumber(string phoneNumber)
+        private PhoneNumber()
         {
-            if (string.IsNullOrEmpty(phoneNumber))
-            {
-                throw new PhoneNumberRequiredException();
-            }
-
-            if (!IsPhoneNumberFormatValid(phoneNumber))
-            {
-                throw new InvalidPhoneNumberException();
-            }
         }
 
-        private static bool IsPhoneNumberFormatValid(string phoneNumberStr)
+        public int CountryCode { get; set; }
+
+        public ulong NationalNumber { get; set; }
+
+        private void SetPhoneNumber(string phoneNumberStr, string countryCode)
         {
             var phoneUtil = PhoneNumberUtil.GetInstance();
 
             try
             {
-                var phoneNumber = phoneUtil.Parse(phoneNumberStr, null);
-                return phoneUtil.IsValidNumber(phoneNumber);
+                var phoneNumber = phoneUtil.Parse(phoneNumberStr, countryCode);
+                if (phoneUtil.IsValidNumber(phoneNumber))
+                {
+                    NationalNumber = phoneNumber.NationalNumber;
+                    CountryCode = phoneNumber.CountryCode;
+                }
             }
             catch
             {
-                return false;
+                throw new InvalidPhoneNumberException();
             }
         }
     }

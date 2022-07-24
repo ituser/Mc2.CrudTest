@@ -45,7 +45,7 @@ namespace Mc2.CrudTest.UnitTests.Customers
         [Fact]
         public void Should_throw_exception_when_customer_phoneNumber_is_invalid()
         {
-            Action newCustomer = () => _builder.WithPhoneNumber("+9891234916820912")
+            Action newCustomer = () => _builder.WithPhoneNumber("02144524", "Ch")
                                                .Build();
 
             newCustomer.Should().Throw<InvalidPhoneNumberException>();

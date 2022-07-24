@@ -15,6 +15,8 @@ namespace Mc2.CrudTest.Application.Contracts.Customers
 
         public string PhoneNumber { get; set; }
 
+        public string CountryCode { get; set; }
+
         public string BankAccountNumber { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -21,8 +21,10 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mc2.CrudTest.Domain\Mc2.CrudTest.Domain.csproj" />
+    <ProjectReference Include="..\Mc2.CrudTest.QueryModel.Models\Mc2.CrudTest.QueryModel.Models.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Mappings\Customers\" />
+    <Folder Include="Migrations\" />
+    <Folder Include="Repositories\" />
   </ItemGroup>
 </Project>

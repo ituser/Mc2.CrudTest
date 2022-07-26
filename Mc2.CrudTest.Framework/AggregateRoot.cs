@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Mc2.CrudTest.Framework
 {
@@ -14,15 +15,17 @@ namespace Mc2.CrudTest.Framework
         {
         }
 
-        public T Id { get; protected set; }
-
-        public bool IsDeleted { get; protected set; }
+        public T Id { get; set; }
 
         public DateTime CreateDateTime { get; protected set; }
 
         public DateTime? ModifiedDateTime { get; protected set; }
 
         public DateTime? DeletedDateTime { get; protected set; }
+
+        public bool IsDeleted { get; protected set; }
+
+        public List<DomainEvent> UncommittedEvents { get; set; }
 
         protected void MarkAsRemove()
         {
@@ -32,6 +35,7 @@ namespace Mc2.CrudTest.Framework
 
         protected void PublishEvent(DomainEvent @event)
         {
+            //UncommittedEvents.Add(@event);
         }
     }
 }

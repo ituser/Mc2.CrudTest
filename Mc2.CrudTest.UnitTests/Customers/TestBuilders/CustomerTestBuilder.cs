@@ -3,7 +3,7 @@ using Mc2.CrudTest.Domain.Models.Customers;
 using Mc2.CrudTest.Domain.Models.Customers.DomainServices;
 using NSubstitute;
 
-namespace Mc2.CrudTest.UnitTests.Customers
+namespace Mc2.CrudTest.UnitTests.Customers.TestBuilders
 {
     public class CustomerTestBuilder
     {
@@ -15,6 +15,7 @@ namespace Mc2.CrudTest.UnitTests.Customers
             Email = "allahyari3631@gmail.com";
             PhoneNumber = "09123491682";
             CountryCode = "IR";
+            //BankAccountNumber = "IR75 0560 0826 8000 3876 5720 01";
             BankAccountNumber = "NL91 ABNA 0417 1643 00";
 
             DuplicateCustomerDomainService = Substitute.For<IDuplicateCustomerDomainService>();

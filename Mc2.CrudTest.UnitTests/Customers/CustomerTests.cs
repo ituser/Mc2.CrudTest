@@ -1,6 +1,7 @@
 ﻿using System;
 using FluentAssertions;
 using Mc2.CrudTest.Domain.Models.Customers.Exceptions;
+using Mc2.CrudTest.UnitTests.Customers.TestBuilders;
 using Xunit;
 
 namespace Mc2.CrudTest.UnitTests.Customers
@@ -15,40 +16,17 @@ namespace Mc2.CrudTest.UnitTests.Customers
         public CustomerTestBuilder _builder { get; set; }
 
         [Fact]
-        public void Should_throw_exception_when_customer_bankAccountNumber_is_invalid()
+        public void Should_create_customer_with_valid_values()
         {
-            Action newCustomer = () => _builder.WithBankAccountNumber("abcd")
-                                               .Build();
+            var newCustomer = _builder.WithFirstName("Roya")
+                                      .WithLastName("Allahyari")
+                                      .WithDateOfBirth(DateTime.Parse("1984-04-11"))
+                                      .WithPhoneNumber("+989123491682", null)
+                                      .WithEmail("allahyari3631@gmail.com")
+                                      .WithBankAccountNumber("NL91 ABNA 0417 1643 00")
+                                      .Build();
 
-            newCustomer.Should().Throw<InvalidBankAccountNumberException>();
-        }
-
-        [Fact]
-        public void Should_throw_exception_when_customer_email_is_invalid()
-        {
-            Action newCustomer = () => _builder.WithEmail("allahyari3631.com")
-                                               .Build();
-
-            newCustomer.Should().Throw<InvalidEmailException>();
-        }
-        
-        [Fact]
-        public void Should_throw_exception_when_customer_email_is_exist()
-        {
-            Action newCustomer = () => _builder.WithEmail("allahyari3631@gmail.com")
-                                               .EmailIsExist()
-                                               .Build();
-
-            newCustomer.Should().Throw<DuplicateEmailException>();
-        }
-
-        [Fact]
-        public void Should_throw_exception_when_customer_phoneNumber_is_invalid()
-        {
-            Action newCustomer = () => _builder.WithPhoneNumber("02144524", "Ch")
-                                               .Build();
-
-            newCustomer.Should().Throw<InvalidPhoneNumberException>();
+            newCustomer.Should().NotBeNull();
         }
 
         [Fact]
@@ -61,6 +39,16 @@ namespace Mc2.CrudTest.UnitTests.Customers
                                                .Build();
 
             newCustomer.Should().Throw<DuplicateCustomerException>();
+        }
+
+        [Fact]
+        public void Should_throw_exception_when_customer_email_is_exist()
+        {
+            Action newCustomer = () => _builder.WithEmail("allahyari3631@gmail.com")
+                                               .EmailIsExist()
+                                               .Build();
+
+            newCustomer.Should().Throw<DuplicateEmailException>();
         }
     }
 }

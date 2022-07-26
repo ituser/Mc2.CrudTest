@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Mc2.CrudTest.AcceptanceTests
+namespace Mc2.CrudTest.AcceptanceTests.Customers
 {
     using TechTalk.SpecFlow;
     using System;
@@ -19,7 +19,7 @@ namespace Mc2.CrudTest.AcceptanceTests
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class CustomerFeatureFeature : object, Xunit.IClassFixture<CustomerFeatureFeature.FixtureData>, System.IDisposable
+    public partial class CreateCustomerFeatureFeature : object, Xunit.IClassFixture<CreateCustomerFeatureFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace Mc2.CrudTest.AcceptanceTests
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "CustomerCreationFeature.feature"
+#line 1 "CreateCustomerFeature.feature"
 #line hidden
         
-        public CustomerFeatureFeature(CustomerFeatureFeature.FixtureData fixtureData, Mc2_CrudTest_AcceptanceTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public CreateCustomerFeatureFeature(CreateCustomerFeatureFeature.FixtureData fixtureData, Mc2_CrudTest_AcceptanceTests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,8 +40,7 @@ namespace Mc2.CrudTest.AcceptanceTests
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "", "CustomerFeature", "As an admin,\r\nIn order to mange customer,\r\nI need to be able create/edit/delete c" +
-                    "ustomer", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Customers", "CreateCustomerFeature", "As a user,\r\nIn order to mange customer,\r\nI need to be able create customer", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -82,7 +81,7 @@ namespace Mc2.CrudTest.AcceptanceTests
         }
         
         [Xunit.SkippableFactAttribute(DisplayName="Customer with valid info should be registered")]
-        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("FeatureTitle", "CreateCustomerFeature")]
         [Xunit.TraitAttribute("Description", "Customer with valid info should be registered")]
         [Xunit.TraitAttribute("Category", "Customer")]
         public virtual void CustomerWithValidInfoShouldBeRegistered()
@@ -122,7 +121,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Roya",
                             "Allahyari",
                             "1984-04-11",
-                            "00989123491682",
+                            "+989123491682",
                             "allahyari3631@gmail.com",
                             "FR76 3000 6000 0112 3456 7890 189"});
 #line 8
@@ -139,7 +138,7 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [Xunit.SkippableFactAttribute(DisplayName="Customer with existing name, family and date of birth should be rejected")]
-        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("FeatureTitle", "CreateCustomerFeature")]
         [Xunit.TraitAttribute("Description", "Customer with existing name, family and date of birth should be rejected")]
         public virtual void CustomerWithExistingNameFamilyAndDateOfBirthShouldBeRejected()
         {
@@ -181,7 +180,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Roya",
                             "Allahyari",
                             "1984-04-11",
-                            "00989123491682",
+                            "+989123491682",
                             "allahyari3631@gmail.com",
                             "FR76 3000 6000 0112 3456 7890 189"});
 #line 16
@@ -198,7 +197,7 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [Xunit.SkippableFactAttribute(DisplayName="Customer with null firstName should be rejected")]
-        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("FeatureTitle", "CreateCustomerFeature")]
         [Xunit.TraitAttribute("Description", "Customer with null firstName should be rejected")]
         public virtual void CustomerWithNullFirstNameShouldBeRejected()
         {
@@ -236,7 +235,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "",
                             "Allahyari",
                             "1984-04-11",
-                            "00989123491682",
+                            "+989123491682",
                             "allahyari3631@gmail.com",
                             "FR76 3000 6000 0112 3456 7890 189"});
 #line 23
@@ -253,7 +252,7 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [Xunit.SkippableFactAttribute(DisplayName="Customer with null lastName should be rejected")]
-        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("FeatureTitle", "CreateCustomerFeature")]
         [Xunit.TraitAttribute("Description", "Customer with null lastName should be rejected")]
         public virtual void CustomerWithNullLastNameShouldBeRejected()
         {
@@ -291,7 +290,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Roya",
                             "",
                             "1984-04-11",
-                            "00989123491682",
+                            "+989123491682",
                             "allahyari3631@gmail.com",
                             "FR76 3000 6000 0112 3456 7890 189"});
 #line 30
@@ -308,7 +307,7 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [Xunit.SkippableFactAttribute(DisplayName="Customer with invalid phoneNumber should be rejected")]
-        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("FeatureTitle", "CreateCustomerFeature")]
         [Xunit.TraitAttribute("Description", "Customer with invalid phoneNumber should be rejected")]
         public virtual void CustomerWithInvalidPhoneNumberShouldBeRejected()
         {
@@ -346,7 +345,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Roya",
                             "Allahyari",
                             "1984-04-11",
-                            "00989123491682245111",
+                            "00989123491682",
                             "allahyari3631@gmail.com",
                             "FR76 3000 6000 0112 3456 7890 189"});
 #line 37
@@ -363,7 +362,7 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [Xunit.SkippableFactAttribute(DisplayName="Customer with null phoneNumber should be rejected")]
-        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("FeatureTitle", "CreateCustomerFeature")]
         [Xunit.TraitAttribute("Description", "Customer with null phoneNumber should be rejected")]
         public virtual void CustomerWithNullPhoneNumberShouldBeRejected()
         {
@@ -418,7 +417,7 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [Xunit.SkippableFactAttribute(DisplayName="Customer with invalid email address should be rejected")]
-        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("FeatureTitle", "CreateCustomerFeature")]
         [Xunit.TraitAttribute("Description", "Customer with invalid email address should be rejected")]
         public virtual void CustomerWithInvalidEmailAddressShouldBeRejected()
         {
@@ -456,7 +455,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Roya",
                             "Allahyari",
                             "1984-04-11",
-                            "00989123491682",
+                            "+989123491682",
                             "allahyari3631.com",
                             "FR76 3000 6000 0112 3456 7890 189"});
 #line 51
@@ -473,7 +472,7 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [Xunit.SkippableFactAttribute(DisplayName="Customer with null email address should be rejected")]
-        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("FeatureTitle", "CreateCustomerFeature")]
         [Xunit.TraitAttribute("Description", "Customer with null email address should be rejected")]
         public virtual void CustomerWithNullEmailAddressShouldBeRejected()
         {
@@ -511,7 +510,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Roya",
                             "Allahyari",
                             "1984-04-11",
-                            "00989123491682",
+                            "+989123491682",
                             "",
                             "FR76 3000 6000 0112 3456 7890 189"});
 #line 58
@@ -528,7 +527,7 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [Xunit.SkippableFactAttribute(DisplayName="Customer with invalid bank account number should be rejected")]
-        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("FeatureTitle", "CreateCustomerFeature")]
         [Xunit.TraitAttribute("Description", "Customer with invalid bank account number should be rejected")]
         public virtual void CustomerWithInvalidBankAccountNumberShouldBeRejected()
         {
@@ -566,7 +565,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Roya",
                             "Allahyari",
                             "1984-04-11",
-                            "00989123491682",
+                            "+989123491682",
                             "allahyari3631@gmail.com",
                             "1234567890"});
 #line 65
@@ -583,7 +582,7 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [Xunit.SkippableFactAttribute(DisplayName="Customer with null bank account number should be rejected")]
-        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("FeatureTitle", "CreateCustomerFeature")]
         [Xunit.TraitAttribute("Description", "Customer with null bank account number should be rejected")]
         public virtual void CustomerWithNullBankAccountNumberShouldBeRejected()
         {
@@ -621,7 +620,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Roya",
                             "Allahyari",
                             "1984-04-11",
-                            "00989123491682",
+                            "+989123491682",
                             "allahyari3631@gmail.com",
                             ""});
 #line 72
@@ -638,17 +637,17 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [Xunit.SkippableTheoryAttribute(DisplayName="Create Customer")]
-        [Xunit.TraitAttribute("FeatureTitle", "CustomerFeature")]
+        [Xunit.TraitAttribute("FeatureTitle", "CreateCustomerFeature")]
         [Xunit.TraitAttribute("Description", "Create Customer")]
-        [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "00989123491682", "allahyari3631@gmail.com", "FR76 3000 6000 0112 3456 7890 189", "successful", new string[0])]
-        [Xunit.InlineDataAttribute("\"\"", "Allahyari", "1984-04-11", "00989123491682", "allahyari3631@gmail.com", "FR76 3000 6000 0112 3456 7890 189", "FirstNameRequiredException", new string[0])]
-        [Xunit.InlineDataAttribute("Roya", "\"\"", "1984-04-11", "00989123491682", "allahyari3631@gmail.com", "FR76 3000 6000 0112 3456 7890 189", "LastNameRequiredException", new string[0])]
-        [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "00989123491682245111", "allahyari3631@gmail.com", "FR76 3000 6000 0112 3456 7890 189", "InvalidPhoneNumberException", new string[0])]
+        [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "+989123491682", "allahyari3631@gmail.com", "FR76 3000 6000 0112 3456 7890 189", "successful", new string[0])]
+        [Xunit.InlineDataAttribute("\"\"", "Allahyari", "1984-04-11", "+989123491682", "allahyari3631@gmail.com", "FR76 3000 6000 0112 3456 7890 189", "FirstNameRequiredException", new string[0])]
+        [Xunit.InlineDataAttribute("Roya", "\"\"", "1984-04-11", "+989123491682", "allahyari3631@gmail.com", "FR76 3000 6000 0112 3456 7890 189", "LastNameRequiredException", new string[0])]
+        [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "00989123491682", "allahyari3631@gmail.com", "FR76 3000 6000 0112 3456 7890 189", "InvalidPhoneNumberException", new string[0])]
         [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "", "allahyari3631@gmail.com", "FR76 3000 6000 0112 3456 7890 189", "PhoneNumberRequiredException", new string[0])]
-        [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "00989123491682", "allahyari3631.com", "FR76 3000 6000 0112 3456 7890 189", "InvalidEmailException", new string[0])]
-        [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "00989123491682", "\"\"", "FR76 3000 6000 0112 3456 7890 189", "EmailRequiredException", new string[0])]
-        [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "00989123491682", "allahyari3631@gmail.com", "1234567890", "InvalidBankAccountNumberException", new string[0])]
-        [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "00989123491682", "allahyari3631@gmail.com", "\"\"", "BankAccountNumberRequiredException", new string[0])]
+        [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "+989123491682", "allahyari3631.com", "FR76 3000 6000 0112 3456 7890 189", "InvalidEmailException", new string[0])]
+        [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "+989123491682", "\"\"", "FR76 3000 6000 0112 3456 7890 189", "EmailRequiredException", new string[0])]
+        [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "+989123491682", "allahyari3631@gmail.com", "1234567890", "InvalidBankAccountNumberException", new string[0])]
+        [Xunit.InlineDataAttribute("Roya", "Allahyari", "1984-04-11", "+989123491682", "allahyari3631@gmail.com", "\"\"", "BankAccountNumberRequiredException", new string[0])]
         public virtual void CreateCustomer(string firstName, string lastName, string dateOfBirth, string phoneNumber, string email, string bankAccountNumber, string result, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
@@ -701,12 +700,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                CustomerFeatureFeature.FeatureSetup();
+                CreateCustomerFeatureFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                CustomerFeatureFeature.FeatureTearDown();
+                CreateCustomerFeatureFeature.FeatureTearDown();
             }
         }
     }

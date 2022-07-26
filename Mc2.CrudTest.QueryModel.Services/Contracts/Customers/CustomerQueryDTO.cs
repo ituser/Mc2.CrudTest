@@ -1,9 +1,11 @@
 ﻿using System;
 
-namespace Mc2.CrudTest.AcceptanceTests
+namespace Mc2.CrudTest.QueryModel.Services.Contracts.Customers
 {
-    public class SpecCustomer
+    public class CustomerQueryDTO
     {
+        public Guid Id { get; set; }
+
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
@@ -12,7 +14,9 @@ namespace Mc2.CrudTest.AcceptanceTests
 
         public string Email { get; set; }
 
-        public string PhoneNumber { get; set; }
+        public int CountryCode { get; set; }
+
+        public ulong NationalNumber { get; set; }
 
         public string BankAccountNumber { get; set; }
     }

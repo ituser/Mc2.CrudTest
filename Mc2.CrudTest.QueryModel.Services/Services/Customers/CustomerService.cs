@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Mc2.CrudTest.QueryModel.Models.Models.Customers;
 using Mc2.CrudTest.QueryModel.Services.Contracts.Customers;
+using Mapster;
 
 namespace Mc2.CrudTest.QueryModel.Services.Services.Customers
 {
@@ -51,6 +53,20 @@ namespace Mc2.CrudTest.QueryModel.Services.Services.Customers
             var existingCustomer = await repository.Get(customerId);
 
             await repository.Remove(existingCustomer);
+        }
+
+        public async Task<CustomerQueryDTO> GetCustomer(Guid customerId)
+        {
+            var customer = await repository.Get(customerId);
+            
+            return customer.Adapt<CustomerQueryDTO>();
+        }
+
+        public async Task<List<CustomerQueryDTO>> GetCustomers()
+        {
+            var customers = await repository.GetAll();
+
+            return customers.Adapt<List<CustomerQueryDTO>>();
         }
     }
 }

@@ -45,13 +45,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WriteModel", "WriteModel", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReadModel", "ReadModel", "{5F6C2343-7571-44D9-B564-8FBB9AA25471}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mc2.CrudTest.QueryModel.Models", "Mc2.CrudTest.QueryModel.Models\Mc2.CrudTest.QueryModel.Models.csproj", "{B4D7B7E7-5389-4D07-A0A6-C8D0558F9F47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mc2.CrudTest.QueryModel.Models", "Mc2.CrudTest.QueryModel.Models\Mc2.CrudTest.QueryModel.Models.csproj", "{B4D7B7E7-5389-4D07-A0A6-C8D0558F9F47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mc2.CrudTest.QueryModel.Date.EFCore", "Mc2.CrudTest.QueryModel.Date.EFCore\Mc2.CrudTest.QueryModel.Date.EFCore.csproj", "{589C69FB-7C9E-4F93-9D61-6DA1209E3A9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mc2.CrudTest.QueryModel.Date.EFCore", "Mc2.CrudTest.QueryModel.Date.EFCore\Mc2.CrudTest.QueryModel.Date.EFCore.csproj", "{589C69FB-7C9E-4F93-9D61-6DA1209E3A9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mc2.CrudTest.QueryModel.Services", "Mc2.CrudTest.QueryModel.Services\Mc2.CrudTest.QueryModel.Services.csproj", "{99207E60-85A4-422B-B28D-622A89387534}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mc2.CrudTest.QueryModel.Services", "Mc2.CrudTest.QueryModel.Services\Mc2.CrudTest.QueryModel.Services.csproj", "{99207E60-85A4-422B-B28D-622A89387534}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mc2.CrudTest.QueryModel.Handlers", "Mc2.CrudTest.QueryModel.Handlers\Mc2.CrudTest.QueryModel.Handlers.csproj", "{AF22C2CF-B6EF-4100-AB40-4F9CBA0B1B84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mc2.CrudTest.QueryModel.Handlers", "Mc2.CrudTest.QueryModel.Handlers\Mc2.CrudTest.QueryModel.Handlers.csproj", "{AF22C2CF-B6EF-4100-AB40-4F9CBA0B1B84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mc2.CrudTest.QueryModel.Endpoint", "Mc2.CrudTest.QueryModel.Endpoint\Mc2.CrudTest.QueryModel.Endpoint.csproj", "{7761FF3A-1253-4926-9339-9F343029A7F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,6 +121,10 @@ Global
 		{AF22C2CF-B6EF-4100-AB40-4F9CBA0B1B84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF22C2CF-B6EF-4100-AB40-4F9CBA0B1B84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF22C2CF-B6EF-4100-AB40-4F9CBA0B1B84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7761FF3A-1253-4926-9339-9F343029A7F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7761FF3A-1253-4926-9339-9F343029A7F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7761FF3A-1253-4926-9339-9F343029A7F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7761FF3A-1253-4926-9339-9F343029A7F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -146,6 +152,7 @@ Global
 		{589C69FB-7C9E-4F93-9D61-6DA1209E3A9B} = {5F6C2343-7571-44D9-B564-8FBB9AA25471}
 		{99207E60-85A4-422B-B28D-622A89387534} = {5F6C2343-7571-44D9-B564-8FBB9AA25471}
 		{AF22C2CF-B6EF-4100-AB40-4F9CBA0B1B84} = {5F6C2343-7571-44D9-B564-8FBB9AA25471}
+		{7761FF3A-1253-4926-9339-9F343029A7F0} = {5F6C2343-7571-44D9-B564-8FBB9AA25471}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B5A26C9-68C1-49D9-9F32-AF907A1730C2}

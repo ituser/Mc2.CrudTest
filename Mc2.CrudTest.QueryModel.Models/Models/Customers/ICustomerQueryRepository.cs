@@ -7,6 +7,8 @@ namespace Mc2.CrudTest.QueryModel.Models.Models.Customers
     {
         Task<CustomerQueryModel> Get(Guid customerId);
 
+        Task<CustomerQueryModel> GetAll();
+        
         Task Create(CustomerQueryModel customer);
 
         Task Update(CustomerQueryModel customer);

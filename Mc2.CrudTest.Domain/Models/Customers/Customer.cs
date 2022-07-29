@@ -41,7 +41,8 @@ namespace Mc2.CrudTest.Domain.Models.Customers
                                                   CreateDateTime));
         }
 
-        private Customer()
+        [Obsolete("Reserved.", true)]
+        public Customer()
         {
         }
 

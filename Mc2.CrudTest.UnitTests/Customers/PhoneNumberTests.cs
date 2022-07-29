@@ -1,6 +1,7 @@
 ﻿using System;
 using FluentAssertions;
 using Mc2.CrudTest.Domain.Models.Customers.Exceptions;
+using Mc2.CrudTest.Domain.Validators;
 using Mc2.CrudTest.UnitTests.Customers.TestBuilders;
 using Xunit;
 
@@ -42,6 +43,17 @@ namespace Mc2.CrudTest.UnitTests.Customers
                                  .Build();
 
             result.Should().NotBeNull();
+        }
+        
+        [Theory]
+        [InlineData("+989123491682", true)]
+        [InlineData("+31612345678", true)]
+        [InlineData("+982188776655", false)]
+        public void MobileValidation_WithExpectedResult(string phoneNumber, bool expectedResult)
+        {
+            bool testResult = MobileValidator.Validate(phoneNumber);
+            
+            Assert.Equal(testResult, expectedResult);
         }
     }
 }

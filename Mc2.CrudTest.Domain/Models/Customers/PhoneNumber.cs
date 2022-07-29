@@ -1,6 +1,7 @@
 ﻿using Mc2.CrudTest.Domain.Models.Customers.Exceptions;
+using Mc2.CrudTest.Domain.Validators;
 using Mc2.CrudTest.Framework;
-using PhoneNumbers;
+using PhoneNumberUtil = PhoneNumbers.PhoneNumber;
 
 namespace Mc2.CrudTest.Domain.Models.Customers
 {
@@ -21,21 +22,13 @@ namespace Mc2.CrudTest.Domain.Models.Customers
 
         private void SetPhoneNumber(string phoneNumberStr, string countryCode)
         {
-            var phoneUtil = PhoneNumberUtil.GetInstance();
-
-            try
-            {
-                var phoneNumber = phoneUtil.Parse(phoneNumberStr, countryCode);
-                if (phoneUtil.IsValidNumber(phoneNumber))
-                {
-                    NationalNumber = phoneNumber.NationalNumber;
-                    CountryCode = phoneNumber.CountryCode;
-                }
-            }
-            catch
+            if (!MobileValidator.TryParse(phoneNumberStr, out PhoneNumberUtil phoneNumber))
             {
                 throw new InvalidPhoneNumberException();
             }
+            
+            CountryCode = phoneNumber.CountryCode;
+            NationalNumber = phoneNumber.NationalNumber;
         }
     }
 }

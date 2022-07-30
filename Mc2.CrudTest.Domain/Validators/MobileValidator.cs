@@ -12,6 +12,11 @@ namespace Mc2.CrudTest.Domain.Validators
             try
             {
                 phoneNumber = PhoneUtil.Parse(phoneNumberString, null);
+                if (PhoneUtil.GetNumberType(phoneNumber) == PhoneNumberType.MOBILE)
+                {
+                    return true;
+                }
+
                 return true;
             }
             catch

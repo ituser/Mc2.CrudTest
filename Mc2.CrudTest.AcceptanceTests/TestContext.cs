@@ -1,8 +1,29 @@
 ﻿using System;
+using Mc2.CrudTest.AcceptanceTests.Customers;
 using TechTalk.SpecFlow;
 
 namespace Mc2.CrudTest.AcceptanceTests
 {
+    public class CustomerHelpers
+    {
+        public static SpecCustomer CurrentCustomer
+        {
+            get => ScenarioContext.Current.Get<SpecCustomer>("SpecCustomer");
+
+            set
+            {
+                if (!ScenarioContext.Current.ContainsKey("SpecCustomer"))
+                {
+                    ScenarioContext.Current.Add("SpecCustomer", value);
+                }
+                else
+                {
+                    ScenarioContext.Current["SpecCustomer"] = value;
+                }
+            }
+        }
+    }
+
     public class TestContext
     {
         private readonly ScenarioContext context;

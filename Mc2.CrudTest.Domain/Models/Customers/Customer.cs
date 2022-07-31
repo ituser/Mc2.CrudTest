@@ -41,9 +41,21 @@ namespace Mc2.CrudTest.Domain.Models.Customers
                                                   CreateDateTime));
         }
 
-        [Obsolete("Reserved.", true)]
+        //[Obsolete("Reserved.", true)]
         public Customer()
         {
+        }
+
+
+        public static Customer CreateCustomer(
+            string firstName,
+            string lastName,
+            DateTime dateOfBirth,
+            string phoneNumber,
+            string email,
+            string bankAccountNumber)
+        {
+            return new Customer();
         }
 
         public FirstName FirstName { get; set; }

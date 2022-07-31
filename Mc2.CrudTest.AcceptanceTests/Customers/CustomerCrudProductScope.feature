@@ -28,8 +28,8 @@
 
     Scenario: Create a duplicate customer by firstname, lastname and date of birth
         Given system has existing customer
-          | ID | FirstName | LastName | Email        | DateOfBirth | BankAccountNumber |
-          | 1  | JOHN      | DOE      | john@doe.com | 01-JAN-2000 | IR000000000000001 |
+          | ID | FirstName | LastName | Email        | DateOfBirth | BankAccountNumber | PhoneNumber   |
+          | 1  | JOHN      | DOE      | john@doe.com | 01-JAN-2000 | IR000000000000001 | +989123491682 |
         When user creates customer with <FirstName>
         And lastname of <LastName>
         And date of birth of <DateOfBirth>
@@ -37,5 +37,5 @@
         Then system responds with "201"  error
 
     Examples:
-      | ID | FirstName | LastName | Email        | DateOfBirth | BankAccountNumber |
-      | 1  | John      | Doe      | john@doe.com | 01-JAN-2000 | IR000000000000001 |
+      | ID | FirstName | LastName | Email        | DateOfBirth | BankAccountNumber | PhoneNumber   |
+      | 1  | John      | Doe      | john@doe.com | 01-JAN-2000 | IR000000000000001 | +989123491682 |

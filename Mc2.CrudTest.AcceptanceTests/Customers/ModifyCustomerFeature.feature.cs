@@ -110,14 +110,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                             "FirstName",
                             "LastName",
                             "DateOfBirth",
                             "PhoneNumber",
                             "Email",
                             "BankAccountNumber"});
-                table14.AddRow(new string[] {
+                table15.AddRow(new string[] {
                             "Roya",
                             "Allahyari",
                             "1984-04-11",
@@ -125,7 +125,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "allahyari3631@gmail.com",
                             "FR76 3000 6000 0112 3456 7890 189"});
 #line 8
- testRunner.Given("There is a customer with following values", ((string)(null)), table14, "Given ");
+ testRunner.Given("There is a customer with following values", ((string)(null)), table15, "Given ");
 #line hidden
 #line 11
  testRunner.And("I select customer to edit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -154,14 +154,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 19
  testRunner.Then("I should not get any exception", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                             "FirstName",
                             "LastName",
                             "DateOfBirth",
                             "PhoneNumber",
                             "Email",
                             "BankAccountNumber"});
-                table15.AddRow(new string[] {
+                table16.AddRow(new string[] {
                             "amir",
                             "alahyari",
                             "1994-03-13",
@@ -169,7 +169,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "allahyari.amir@yahoo.com",
                             "GB82 WEST 1234 5698 7654 32"});
 #line 20
- testRunner.And("customer info should be changed to following values", ((string)(null)), table15, "And ");
+ testRunner.And("customer info should be changed to following values", ((string)(null)), table16, "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -206,21 +206,21 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                             "FirstName",
                             "LastName",
                             "DateOfBirth",
                             "PhoneNumber",
                             "Email",
                             "BankAccountNumber"});
-                table16.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "Roya",
                             "Allahyari",
                             "1984-04-11",
                             "+989125794172",
                             "allahyari3631@gmail.com",
                             "FR76 3000 6000 0112 3456 7890 189"});
-                table16.AddRow(new string[] {
+                table17.AddRow(new string[] {
                             "Amir",
                             "Allahyari",
                             "1994-03-13",
@@ -228,7 +228,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "allahyari.amir@yahoo.com",
                             "GB82 WEST 1234 5698 7654 32"});
 #line 25
- testRunner.Given("There is customers with following values", ((string)(null)), table16, "Given ");
+ testRunner.Given("There is customers with following values", ((string)(null)), table17, "Given ");
 #line hidden
 #line 29
  testRunner.And("I select customer with firstName \'Amir\' lastName \'Allahyair\' dateofBirth \'1994-03" +
@@ -284,14 +284,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                             "FirstName",
                             "LastName",
                             "DateOfBirth",
                             "PhoneNumber",
                             "Email",
                             "BankAccountNumber"});
-                table17.AddRow(new string[] {
+                table18.AddRow(new string[] {
                             "Roya",
                             "Allahyari",
                             "1984-04-11",
@@ -299,7 +299,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "allahyari3631@gmail.com",
                             "FR76 3000 6000 0112 3456 7890 189"});
 #line 37
- testRunner.Given("There is a customer with following values", ((string)(null)), table17, "Given ");
+ testRunner.Given("There is a customer with following values", ((string)(null)), table18, "Given ");
 #line hidden
 #line 40
  testRunner.And("I select customer to edit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -345,14 +345,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                             "FirstName",
                             "LastName",
                             "DateOfBirth",
                             "PhoneNumber",
                             "Email",
                             "BankAccountNumber"});
-                table18.AddRow(new string[] {
+                table19.AddRow(new string[] {
                             "Roya",
                             "Allahyari",
                             "1984-04-11",
@@ -360,7 +360,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "allahyari3631@gmail.com",
                             "FR76 3000 6000 0112 3456 7890 189"});
 #line 46
- testRunner.Given("There is a customer with following values", ((string)(null)), table18, "Given ");
+ testRunner.Given("There is a customer with following values", ((string)(null)), table19, "Given ");
 #line hidden
 #line 49
  testRunner.And("I select customer to edit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -409,14 +409,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                             "FirstName",
                             "LastName",
                             "DateOfBirth",
                             "PhoneNumber",
                             "Email",
                             "BankAccountNumber"});
-                table19.AddRow(new string[] {
+                table20.AddRow(new string[] {
                             "Roya",
                             "Allahyari",
                             "1984-04-11",
@@ -424,7 +424,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "allahyari3631@gmail.com",
                             "FR76 3000 6000 0112 3456 7890 189"});
 #line 55
- testRunner.Given("There is a customer with following values", ((string)(null)), table19, "Given ");
+ testRunner.Given("There is a customer with following values", ((string)(null)), table20, "Given ");
 #line hidden
 #line 58
  testRunner.And("I select customer to edit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");

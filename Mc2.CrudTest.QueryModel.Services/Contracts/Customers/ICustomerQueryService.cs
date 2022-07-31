@@ -10,9 +10,9 @@ namespace Mc2.CrudTest.QueryModel.Services.Contracts.Customers
 
         Task Modify(CustomerQueryDTO queryDto);
 
-        Task Delete(Guid eventId);
+        Task Delete(int customerId);
 
-        Task<CustomerQueryDTO> GetCustomer(Guid customerId);
+        Task<CustomerQueryDTO> GetCustomer(int customerId);
 
         Task<List<CustomerQueryDTO>> GetCustomers();
     }

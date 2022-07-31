@@ -47,7 +47,7 @@ namespace Mc2.CrudTest.Presentation.Server.Controllers
         }
 
         [HttpDelete]
-        public IActionResult DeleteCustomer(Guid customerId)
+        public IActionResult DeleteCustomer(int customerId)
         {
             customerFacadeService.RemoveCustomer(customerId);
 

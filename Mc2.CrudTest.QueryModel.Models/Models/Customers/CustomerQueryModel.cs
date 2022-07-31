@@ -4,7 +4,7 @@ namespace Mc2.CrudTest.QueryModel.Models.Models.Customers
 {
     public class CustomerQueryModel
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         public string FirstName { get; set; }
 

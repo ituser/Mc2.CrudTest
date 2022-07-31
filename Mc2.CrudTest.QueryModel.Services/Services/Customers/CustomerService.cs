@@ -48,14 +48,14 @@ namespace Mc2.CrudTest.QueryModel.Services.Services.Customers
             await repository.Update(existingCustomer);
         }
 
-        public async Task Delete(Guid customerId)
+        public async Task Delete(int customerId)
         {
             var existingCustomer = await repository.Get(customerId);
 
             await repository.Remove(existingCustomer);
         }
 
-        public async Task<CustomerQueryDTO> GetCustomer(Guid customerId)
+        public async Task<CustomerQueryDTO> GetCustomer(int customerId)
         {
             var customer = await repository.Get(customerId);
             

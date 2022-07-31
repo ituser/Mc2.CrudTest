@@ -5,7 +5,7 @@ namespace Mc2.CrudTest.Application.Contracts.Customers
 {
     public class ModifyCustomerCommand : IRequest
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         public string FirstName { get; set; }
 

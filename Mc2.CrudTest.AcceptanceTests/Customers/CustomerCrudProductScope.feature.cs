@@ -40,14 +40,7 @@ namespace Mc2.CrudTest.AcceptanceTests.Customers
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Customers", "Customer Create Read Edit Delete Product Scope", @"    Background
-        Given system error codes are following
-          | Code | Description                                                |
-          | 101  | Invalid Mobile Number                                      |
-          | 102  | Invalid Email address                                      |
-          | 103  | Invalid Bank Account Number                                |
-          | 201  | Duplicate customer by First-name, Last-name, Date-of-Birth |
-          | 202  | Duplicate customer by Email address                        |", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Customers", "Customer Create Read Edit Delete Product Scope", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -82,6 +75,33 @@ namespace Mc2.CrudTest.AcceptanceTests.Customers
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 3
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Code",
+                        "Description"});
+            table11.AddRow(new string[] {
+                        "101",
+                        "Invalid Mobile Number"});
+            table11.AddRow(new string[] {
+                        "102",
+                        "Invalid Email address"});
+            table11.AddRow(new string[] {
+                        "103",
+                        "Invalid Bank Account Number"});
+            table11.AddRow(new string[] {
+                        "201",
+                        "Duplicate customer by First-name, Last-name, Date-of-Birth"});
+            table11.AddRow(new string[] {
+                        "202",
+                        "Duplicate customer by Email address"});
+#line 4
+ testRunner.Given("System error codes are following", ((string)(null)), table11, "Given ");
+#line hidden
+        }
+        
         void System.IDisposable.Dispose()
         {
             this.TestTearDown();
@@ -104,7 +124,7 @@ namespace Mc2.CrudTest.AcceptanceTests.Customers
             argumentsOfScenario.Add("BankAccountNumber", bankAccountNumber);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create Read Edit Delete Customer", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 12
-    this.ScenarioInitialize(scenarioInfo);
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -123,38 +143,41 @@ namespace Mc2.CrudTest.AcceptanceTests.Customers
             else
             {
                 this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line hidden
 #line 13
-        testRunner.When(string.Format("user creates customer with {0}", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("user creates customer with {0}", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
-        testRunner.And(string.Format("lastname of {0}", lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("lastname of {0}", lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 15
-        testRunner.And(string.Format("date of birth of {0}", dateOfBirth), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("date of birth of {0}", dateOfBirth), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 16
-        testRunner.And(string.Format("email of {0}", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("email of {0}", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 17
-        testRunner.And(string.Format("Phone number of {0}", phoneNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("Phone number of {0}", phoneNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 18
-        testRunner.Then(string.Format("user can lookup customer by ID of {0} and get \"1\" records", iD), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("user can lookup customer by ID of {0} and get \"1\" records", iD), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 19
-        testRunner.When(string.Format("user edit customer by ID of {0} with new email of \"new@email.com\"", iD), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("user edit customer by ID of {0} with new email of \"new@email.com\"", iD), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 20
-        testRunner.Then(string.Format("user can lookup customer by ID of {0} and get \"1\" records", iD), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("user can lookup customer by ID of {0} and get \"1\" records", iD), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 21
-        testRunner.And("return record email is \"new@email.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("return record email is \"new@email.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 22
-        testRunner.When(string.Format("user delete customer by ID of {0}", iD), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("user delete customer by ID of {0}", iD), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 23
-        testRunner.Then(string.Format("user can lookup customer by ID of {0} and get \"0\" records", iD), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("user can lookup customer by ID of {0} and get \"0\" records", iD), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -177,7 +200,7 @@ namespace Mc2.CrudTest.AcceptanceTests.Customers
             argumentsOfScenario.Add("PhoneNumber", phoneNumber);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create a duplicate customer by firstname, lastname and date of birth", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 29
-    this.ScenarioInitialize(scenarioInfo);
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -196,7 +219,10 @@ namespace Mc2.CrudTest.AcceptanceTests.Customers
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+#line 3
+this.FeatureBackground();
+#line hidden
+                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                             "ID",
                             "FirstName",
                             "LastName",
@@ -204,7 +230,7 @@ namespace Mc2.CrudTest.AcceptanceTests.Customers
                             "DateOfBirth",
                             "BankAccountNumber",
                             "PhoneNumber"});
-                table1.AddRow(new string[] {
+                table12.AddRow(new string[] {
                             "1",
                             "JOHN",
                             "DOE",
@@ -213,22 +239,22 @@ namespace Mc2.CrudTest.AcceptanceTests.Customers
                             "IR000000000000001",
                             "+989123491682"});
 #line 30
-        testRunner.Given("system has existing customer", ((string)(null)), table1, "Given ");
+ testRunner.Given("system has existing customer", ((string)(null)), table12, "Given ");
 #line hidden
 #line 33
-        testRunner.When(string.Format("user creates customer with {0}", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When(string.Format("user creates customer with {0}", firstName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 34
-        testRunner.And(string.Format("lastname of {0}", lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("lastname of {0}", lastName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 35
-        testRunner.And(string.Format("date of birth of {0}", dateOfBirth), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("date of birth of {0}", dateOfBirth), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 36
-        testRunner.And(string.Format("email of {0}", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("email of {0}", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 37
-        testRunner.Then("system responds with \"201\"  error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("system responds with \"201\"  error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

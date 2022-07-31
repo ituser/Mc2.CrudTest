@@ -7,21 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Customers\CreateCustomerFeature.feature.cs" />
-    <Compile Remove="Customers\CreateCustomerFeatureSteps.cs" />
-    <Compile Remove="Customers\DeleteCustomerFeature.feature.cs" />
-    <Compile Remove="Customers\DeleteCustomerFeatureSteps.cs" />
-    <Compile Remove="Customers\ModifyCustomerFeature.feature.cs" />
-    <Compile Remove="Customers\ModifyCustomerFeatureSteps.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <SpecFlowFeatureFiles Remove="Customers\CreateCustomerFeature.feature" />
-    <SpecFlowFeatureFiles Remove="Customers\DeleteCustomerFeature.feature" />
-    <SpecFlowFeatureFiles Remove="Customers\ModifyCustomerFeature.feature" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Mapster" Version="7.3.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />

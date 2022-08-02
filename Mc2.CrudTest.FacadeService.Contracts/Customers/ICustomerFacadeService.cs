@@ -11,6 +11,6 @@ namespace Mc2.CrudTest.FacadeService.Contracts.Customers
 
         Task ModifyCustomer(ModifyCustomerCommand command);
 
-        Task RemoveCustomer(Guid customerId);
+        Task RemoveCustomer(int customerId);
     }
 }

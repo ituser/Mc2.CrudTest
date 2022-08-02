@@ -25,7 +25,7 @@ namespace Mc2.CrudTest.FacadeService.Customers
             await mediator.Send(command);
         }
 
-        public async Task RemoveCustomer(Guid customerId)
+        public async Task RemoveCustomer(int customerId)
         {
             await mediator.Send(new RemoveCustomerCommand
                                 {

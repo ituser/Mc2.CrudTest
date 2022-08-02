@@ -17,7 +17,7 @@ namespace Mc2.CrudTest.Persistence.EFCore.Repositories
             this.dbContext = dbContext;
         }
 
-        public Task<Customer> Get(Guid customerId)
+        public Task<Customer> Get(int customerId)
         {
             throw new NotImplementedException();
         }

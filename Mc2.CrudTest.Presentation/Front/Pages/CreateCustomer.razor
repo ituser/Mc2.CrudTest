@@ -1,0 +1,74 @@
+﻿@page "/createcustmer"
+@using Blazored.Toast.Services
+@using Newtonsoft.Json
+@using System.Text
+@using Mc2.CrudTest.Presentation.Contract
+@inject HttpClient http
+@inject IToastService toastService
+
+<h1>Create Customer</h1>
+<EditForm Model="@Customer" OnValidSubmit="@HandleSubmit">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label for="FirstName">FirstName</label>
+        <InputText @bind-Value="Customer.FirstName" class="form-control" id="FirstName" />
+    </div>
+    <div class="form-group">
+        <label for="LastName">LastName</label>
+        <InputText @bind-Value="Customer.LastName" class="form-control" id="LastName" />
+    </div>
+    <div class="form-group">
+        <label for="DateOfBirth">DateOfBirth</label>
+        <InputDate @bind-Value="Customer.DateOfBirth" class="form-control" id="DateOfBirth" />
+    </div>
+    <div class="form-group">
+        <label for="PhoneNumber">Email</label>
+        <InputText @bind-Value="Customer.Email" class="form-control" id="Email" />
+    </div>
+    <div class="form-group">
+        <label for="PhoneNumber">PhoneNumber(ex:+989123491682)</label>
+        <InputText @bind-Value="Customer.PhoneNumber" class="form-control" id="PhoneNumber" />
+    </div>
+    <div class="form-group">
+        <label for="PhoneNumber">BankAccountNumber</label>
+        <InputText @bind-Value="Customer.PhoneNumber" class="form-control" id="BankAccountNumber" />
+    </div>
+    <input type="submit" class="btn btn-primary" value="Save" />
+</EditForm>
+
+<BlazoredToasts Position="ToastPosition.BottomRight"
+                Timeout="10"
+                IconType="IconType.FontAwesome"
+                SuccessClass="success-toast-override"
+                SuccessIcon="fa fa-thumbs-up"
+                ErrorIcon="fa fa-bug"/>
+
+@code {
+
+    private async Task HandleSubmit(EditContext? contex)
+    {
+        if (!contex.Validate())
+        {
+            return;
+        }
+
+        var serializedCustomerModel = JsonConvert.SerializeObject(Customer);
+        var content = new StringContent(serializedCustomerModel, Encoding.UTF8, "application/json");
+
+        var response = await http.PostAsync("Customer", content);
+        if (response.IsSuccessStatusCode)
+        {
+            toastService.ShowSuccess("Customer created successfully");
+            Customer = new CreateCustomerModel();
+        }
+        else
+        {
+            var exception = await response.Content.ReadAsStringAsync();
+            toastService.ShowError(exception);
+        }
+    }
+
+    CreateCustomerModel Customer = new CreateCustomerModel();
+
+
+}

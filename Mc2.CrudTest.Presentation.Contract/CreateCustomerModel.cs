@@ -1,11 +1,9 @@
 ﻿using System;
 
-namespace Mc2.CrudTest.QueryModel.Models.Models.Customers
+namespace Mc2.CrudTest.Presentation.Contract
 {
-    public class CustomerQueryModel
+    public class CreateCustomerModel
     {
-        public int Id { get; set; }
-
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
@@ -14,9 +12,9 @@ namespace Mc2.CrudTest.QueryModel.Models.Models.Customers
 
         public string Email { get; set; }
 
-        public int CountryCode { get; set; }
+        public string PhoneNumber { get; set; }
 
-        public ulong NationalNumber { get; set; }
+        public string CountryCode { get; set; }
 
         public string BankAccountNumber { get; set; }
     }

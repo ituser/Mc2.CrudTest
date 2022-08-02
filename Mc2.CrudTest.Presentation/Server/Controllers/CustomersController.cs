@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Mc2.CrudTest.Application.Contracts.Customers;
 using Mc2.CrudTest.FacadeService.Contracts.Customers;
+using Mc2.CrudTest.QueryModel.Services.Contracts.Customers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Mc2.CrudTest.Presentation.Server.Controllers
@@ -11,9 +14,20 @@ namespace Mc2.CrudTest.Presentation.Server.Controllers
     {
         private readonly ICustomerFacadeService customerFacadeService;
 
-        public CustomersController(ICustomerFacadeService customerFacadeService)
+        private readonly ICustomerQueryService customerQueryService;
+
+        public CustomersController(ICustomerFacadeService customerFacadeService, ICustomerQueryService customerQueryService)
         {
             this.customerFacadeService = customerFacadeService;
+            this.customerQueryService = customerQueryService;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IList<CustomerQueryDTO>>> GetAll()
+        {
+            var customers = await customerQueryService.GetCustomers();
+
+            return Ok(customers);
         }
 
         [HttpPost]
@@ -33,7 +47,7 @@ namespace Mc2.CrudTest.Presentation.Server.Controllers
         }
 
         [HttpDelete]
-        public IActionResult DeleteCustomer(Guid customerId)
+        public IActionResult DeleteCustomer(int customerId)
         {
             customerFacadeService.RemoveCustomer(customerId);
 

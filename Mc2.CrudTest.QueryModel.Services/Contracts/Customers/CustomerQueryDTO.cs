@@ -4,7 +4,7 @@ namespace Mc2.CrudTest.QueryModel.Services.Contracts.Customers
 {
     public class CustomerQueryDTO
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         public string FirstName { get; set; }
 

@@ -7,6 +7,6 @@ namespace Mc2.CrudTest.Domain.Models.Customers.DomainServices
     {
         bool IsEmailExist(string email);
 
-        bool IsEmailExist(Guid id, string email);
+        bool IsEmailExist(int id, string email);
     }
 }

@@ -6,7 +6,7 @@ using Mc2.CrudTest.Framework;
 
 namespace Mc2.CrudTest.Domain.Models.Customers
 {
-    public class Customer : AggregateRoot<Guid>
+    public class Customer : AggregateRoot<int>
     {
         public Customer(
             FirstName firstName,
@@ -22,7 +22,6 @@ namespace Mc2.CrudTest.Domain.Models.Customers
 
             CheckCustomerEmailIsNotExist(email.Value, customerEmailDomainService);
 
-            Id = Guid.NewGuid();
             FirstName = firstName;
             LastName = lastName;
             DateOfBirth = dateOfBirth;
@@ -107,7 +106,7 @@ namespace Mc2.CrudTest.Domain.Models.Customers
             }
         }
 
-        private static void CheckCustomerIsNotExistInUpdate(Guid id, string firstName, string lastName, DateTime dateOfBirth, IDuplicateCustomerDomainService customerDomainService)
+        private static void CheckCustomerIsNotExistInUpdate(int id, string firstName, string lastName, DateTime dateOfBirth, IDuplicateCustomerDomainService customerDomainService)
         {
             var isCustomerExist = customerDomainService.IsCustomerExist(id, firstName, lastName, dateOfBirth);
             if (isCustomerExist)
@@ -125,7 +124,7 @@ namespace Mc2.CrudTest.Domain.Models.Customers
             }
         }
 
-        private void CheckCustomerEmailIsNotExistInUpdate(Guid id, string email, IDuplicateCustomerEmailDomainService duplicateCustomerEmailDomainService)
+        private void CheckCustomerEmailIsNotExistInUpdate(int id, string email, IDuplicateCustomerEmailDomainService duplicateCustomerEmailDomainService)
         {
             var isEmailExist = duplicateCustomerEmailDomainService.IsEmailExist(id, email);
             if (isEmailExist)

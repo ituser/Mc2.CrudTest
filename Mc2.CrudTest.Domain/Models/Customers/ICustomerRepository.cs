@@ -6,7 +6,7 @@ namespace Mc2.CrudTest.Domain.Models.Customers
 {
     public interface ICustomerRepository :IRepository
     {
-        Task<Customer> Get(Guid customerId);
+        Task<Customer> Get(int customerId);
 
         Task Create(Customer customer);
 

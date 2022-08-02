@@ -23,17 +23,16 @@ namespace Mc2.CrudTest.Presentation.Server
         {
             CompositionRoot.RegisterDependencies(services, Configuration);
 
-            services.AddSwaggerGen(setupAction =>
-                                   {
-                                       setupAction.SwaggerDoc(
-                                                              "v1",
-                                                              new OpenApiInfo
-                                                              {
-                                                                  Title = "CustomerApi",
-                                                                  Version = "1",
-                                                              });
-                                   });
-
+            //services.AddSwaggerGen(setupAction =>
+            //                       {
+            //                           setupAction.SwaggerDoc(
+            //                                                  "v1",
+            //                                                  new OpenApiInfo
+            //                                                  {
+            //                                                      Title = "CustomerApi",
+            //                                                      Version = "1",
+            //                                                  });
+            //                       });
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
@@ -59,20 +58,20 @@ namespace Mc2.CrudTest.Presentation.Server
 
             app.UseRouting();
 
-            app.UseSwagger();
-            app.UseSwaggerUI(setupAction =>
-                             {
-                                 setupAction.SwaggerEndpoint("/swagger/v1/swagger.json", "CustomerApi");
-                                 //setupAction.RoutePrefix = "OpenAPI";
-                                 setupAction.DocExpansion(DocExpansion.None);
-                             });
+            //app.UseSwagger();
+            //app.UseSwaggerUI(setupAction =>
+            //                 {
+            //                     setupAction.SwaggerEndpoint("/swagger/v1/swagger.json", "CustomerApi");
+            //                     //setupAction.RoutePrefix = "OpenAPI";
+            //                     setupAction.DocExpansion(DocExpansion.None);
+            //                 });
 
             app.UseEndpoints(endpoints =>
-                             {
-                                 endpoints.MapRazorPages();
-                                 endpoints.MapControllers();
-                                 endpoints.MapFallbackToFile("index.html");
-                             });
+            {
+                endpoints.MapRazorPages();
+                endpoints.MapControllers();
+                endpoints.MapFallbackToFile("index.html");
+            });
         }
     }
 }

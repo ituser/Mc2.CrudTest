@@ -13,7 +13,7 @@ namespace Mc2.CrudTest.Framework
 
         public Guid Id { get; set; }
 
-        public Guid AggregateId { get; set; }
+        public int AggregateId { get; set; }
 
         public string AggregateName { get; set; }
 

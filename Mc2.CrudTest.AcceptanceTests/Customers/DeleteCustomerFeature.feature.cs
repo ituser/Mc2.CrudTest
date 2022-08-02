@@ -110,14 +110,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                             "FirstName",
                             "LastName",
                             "DateOfBirth",
                             "PhoneNumber",
                             "Email",
                             "BankAccountNumber"});
-                table11.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "Roya",
                             "Allahyari",
                             "1984-04-11",
@@ -125,7 +125,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "allahyari3631@gmail.com",
                             "FR76 3000 6000 0112 3456 7890 189"});
 #line 8
- testRunner.Given("There is a customer with following values", ((string)(null)), table11, "Given ");
+ testRunner.Given("There is a customer with following values", ((string)(null)), table13, "Given ");
 #line hidden
 #line 11
  testRunner.And("I select customer to delete", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -174,21 +174,21 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                             "FirstName",
                             "LastName",
                             "DateOfBirth",
                             "PhoneNumber",
                             "Email",
                             "BankAccountNumber"});
-                table12.AddRow(new string[] {
+                table14.AddRow(new string[] {
                             "Roya",
                             "Allahyari",
                             "1984-04-11",
                             "+989125794172",
                             "allahyari3631@gmail.com",
                             "FR76 3000 6000 0112 3456 7890 189"});
-                table12.AddRow(new string[] {
+                table14.AddRow(new string[] {
                             "Amir",
                             "Allahyari",
                             "1994-03-13",
@@ -196,7 +196,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "allahyari.amir@yahoo.com",
                             "GB82 WEST 1234 5698 7654 32"});
 #line 17
- testRunner.Given("There is customers with following values", ((string)(null)), table12, "Given ");
+ testRunner.Given("There is customers with following values", ((string)(null)), table14, "Given ");
 #line hidden
 #line 21
  testRunner.And("I select customer with firstName \'Amir\' lastName \'Allahyair\' dateofBirth \'1994-03" +

@@ -7,6 +7,6 @@ namespace Mc2.CrudTest.Domain.Models.Customers.DomainServices
     {
         bool IsCustomerExist(string firstName, string lastName, DateTime dateOfBirth);
 
-        bool IsCustomerExist(Guid id, string firstName, string lastName, DateTime dateOfBirth);
+        bool IsCustomerExist(int id, string firstName, string lastName, DateTime dateOfBirth);
     }
 }
